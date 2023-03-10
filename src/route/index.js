@@ -378,5 +378,118 @@ router.get('/work', function (req, res) {
     footer,
   })
 })
+
+// ================================================================
+
+router.get('/person', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('person', {
+    // ↙ сюди вводимо JSON дані
+
+    layout: 'person',
+
+    page: {
+      title: 'CV * Person',
+      big: true,
+    },
+
+    person: {
+      name: 'Viktoriia Krasko',
+      age: 35,
+      gender: 'Female',
+      address: {
+        street: 'Shevchenka 24',
+        city: 'Kyiv',
+        oblast: 'Kyivska oblast',
+        zip: '02412',
+        country: 'Ukraine',
+      },
+      education: [
+        {
+          degree: 'Bachelor of Philology',
+          major: 'English language and literature',
+          university: 'Kyiv National Linguistic University',
+          graduationYear: 2011,
+        },
+      ],
+      workExperience: [
+        {
+          company: 'Comfy LLC',
+          title: 'Department Manager',
+          startDate: '01.06.2011',
+          endDate: '15.05.2014',
+          responsibilities: [
+            'Managing, motivating and training employees within a department',
+            ' Maintaining quality service in terms of company standards',
+            ' Providing reaching the target and all KPIs',
+          ],
+          year_founded: 2001,
+          industry: 'Retail',
+          employees: [
+            {
+              name: 'Oleksandr Popov',
+              position: 'IT-expert',
+              department: 'IT',
+              projects: [
+                {
+                  name: 'Project Sigma',
+                  description:
+                    'Developing new software for colleagues, improving their work',
+                  status: 'In progress',
+                  teams: [
+                    {
+                      team_name: 'Dream Team',
+                      team_leader: {
+                        name: 'Oksana Mavets',
+                        title: 'Team Leader',
+                        email: 'oks.mavets@gmail.com',
+                      },
+                      team_members: [
+                        {
+                          name: 'Kristina Surovaya',
+                          title:
+                            'Senior Software Developer',
+                          email: 'kris.tina@gmail.com',
+                          skills: [
+                            'Java',
+                            ' Python',
+                            ' SQL',
+                          ],
+                          projects: [
+                            {
+                              name: 'Project A',
+                              description:
+                                'Very Interesting project A',
+                              technologies: [
+                                'Java',
+                                ' MongoDB',
+                                ' Spring Framework',
+                              ],
+                              team_members: [
+                                {
+                                  name: 'Svitlana Umanets',
+                                  title:
+                                    'Software Engineer',
+                                },
+                                {
+                                  name: 'Olga Sharog',
+                                  title: 'QA',
+                                },
+                              ],
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  })
+})
 // Підключаємо роутер до бек-енду
 module.exports = router
