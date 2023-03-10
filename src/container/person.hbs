@@ -1,0 +1,88 @@
+{{! Це контейнер для нової сторінки Person }}
+
+<div>
+  {{#with person}}
+  <main>
+    <section>
+      {{> title data=name big=true}}
+      <br/>
+      <p><b>Age: </b>{{age}}</p>
+      <p><b>Gender: </b> {{gender}}</p>
+    </section>
+    <section>
+            <b>Address: </b>
+            <address>
+            {{#each address}}
+             {{this}}
+            {{/each}}
+            <address>
+        </address>
+    </section>
+    <section>
+            <b>Education: </b>
+            {{#each education}}
+             <p>            
+                {{university}} ({{graduationYear}})
+            </p>
+            <p>
+                {{degree}} in {{major}}
+            
+            </p>
+            {{/each}}
+    </section>
+    <section>
+            <b>Work Experience: </b>
+            {{#each workExperience}}
+             <p>            
+                <i>{{company}}</i> ({{startDate}} - {{endDate}})
+            </p>
+            <p>
+                <em>Title: </em> {{title}}            
+            </p>
+            <p><em>Responsibilities: </em>{{responsibilities}}</p>
+            {{/each}}
+    </section>
+    
+    {{!-- About company --}}
+    <section>
+        {{#each workExperience}}
+        <p><b>About {{company}}</b></p>
+            <p>{{company}} was founded at {{year_founded}}. It mostly occupied {{industry}} industry.</p>
+            {{#each employees}}
+                <p> The employee of the 2014 was {{name}}, an {{position}} from  {{department}} department.</p>
+                <p>His most prominent project was
+                    {{#each projects}}{{name}}. 
+                    {{description}} was the main goal of the project.
+                    <p><em>The current status of {{name}}: {{status}}.</em></p>
+                        {{#each teams}}
+                        <p>Team for the project: {{team_name}}.</p>
+                          {{#with team_leader}}
+                            <p>{{title}}: {{name}} (email: {{email}})</p>
+                          {{/with}}
+                          {{#each team_members}}
+                            <p>Team members: 
+                                {{name}}, {{title}} (email: {{email}})</p>
+                                <p>Skills: {{skills}}
+                                    <p>Projects: 
+                                        {{#each projects}}
+                                        {{name}}
+                                        <p>About: {{description}}</p>
+                                        <p>Technologies used: {{technologies}}</p>
+                                        <p>Team members for the {{name}}: </p>
+                                            {{#each team_members}}
+                                                <ul>
+                                                    <li>{{name}}, {{title}}</li>
+                                                </ul>
+                                            {{/each}}
+                                        {{/each}}
+                                    </p>
+                                </p>
+                            {{/each}}
+                        {{/each}}
+                    {{/each}}
+                </p>
+            {{/each}}
+       {{/each}}
+    </section>
+    {{/with}}
+</div>
