@@ -1,0 +1,50 @@
+{{! Це контейнер для сторінки про проекти }}
+
+<div>
+    {{#with main}}
+  <main>
+    <section>
+      {{> title data="Work History" big=true}}
+      <div>
+        <ul>
+        {{#each work}}
+            <li>
+                <div>{{position}} </div>
+                <br/>
+                <div>{{duration.from}} - {{#if duration.to}} {{duration.to}} {{else}} (till now) {{/if}}</div>
+                <br/>
+                <div>{{#if company.url}}{{> link text=company.name href=company.url blank=true noLine=true}}{{else}}{{company.name}}{{/if}}</div>
+                <br/>
+                <br/>
+                <div><strong>Projects ({{projectAmount}}): </strong></div>
+                <br/>
+                <ul>
+                    {{#each projects}}
+                    <li>
+                        <div>{{> link text=name href=url blank=true noLine=true}}</div>
+                        <br/>
+                        <div><p><em>{{about}}</em></p></div>
+                        <br/>
+                        <div><b>Technologies used ({{stackAmount}}):</b>
+                         {{#each stacks}} 
+                            <ul><li>{{name}}</li></ul>{{/each}}</div>
+                        <br/>
+                        <div><b>Awards recieved ({{awardAmount}}):</b>
+                         {{#each awards}} 
+                            <ul><li>{{name}}</li></ul>{{/each}}</div>
+                        <br/>
+                    </li>
+                    {{/each}}
+                </ul>
+            </li>
+            <br/>
+            
+        {{/each}}
+        </ul>
+        
+      </div>
+    </section>
+  
+  </main>
+  {{/with}}
+</div>
