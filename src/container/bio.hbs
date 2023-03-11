@@ -1,0 +1,158 @@
+{{! Це контейнер для нової сторінки Bio }}
+{{! Ця сторінка з WIKI }}
+<head>
+  <style type='text/css'>
+    header ul{ list-style-type: none; margin: 0; padding:
+    0;overflow: hidden; width: 1500px; background-color:
+    grey; } a:link, a:visited{ display: block; font-weight:
+    bold; color: #ffffff; background-color: grey; width:
+    100px; text-align: center; padding: 4px;
+    text-decoration: none; } a:hover, a:active{
+    background-color: darkblue; } header ul li{ float: left;
+    } #wrapper{font-family:'Segoe UI', Tahoma, Geneva,
+    Verdana, sans-serif; display: block; width: 800px;
+    text-align: center; margin-left: 400px; }
+    .ticks{padding: 0; margin-left: 280px;
+    list-style-position: outside; width: 160px;}
+  </style>
+</head>
+<header>
+  <nav>
+    <ul>
+      <li><a href='#known-for'>Known For</a></li>
+      <li><a href='#education'>Education</a></li>
+      <li><a href='#publications'>Notable Publications</a></li>
+      <li><a href='#partners'>Partners</a></li>
+      <li><a href='#awards'>Awards</a></li>
+      <li><a href='#influences'>Influences</a></li>
+      <li><a href='#influenced'>Influenced</a></li>
+      <li><a href='#quotes'>Quotes</a></li>
+      <li><a href='#discoveries'>Major Discoveries</a></li>
+      <li><a href='#contributions'>Contributions</a></li>
+    </ul>
+  </nav>
+</header>
+<main id='wrapper'>
+  <h1>{{name}}</h1>
+  <article class='dates'>
+    <p>{{birthdate}} - {{deathdate}}</p>
+  </article>
+  <article>
+    <p><b>Birthplace</b>
+      -
+      {{birthplace}}
+      <br />
+      <br />
+      <b>Deathplace</b>
+      -
+      {{deathplace}}</p>
+    <p>
+      <b>Nationality</b>
+      -
+      {{nationality}}
+    </p>
+    <p>
+      <b>Occupation</b>
+      -
+      {{occupation}}
+    </p>
+  </article>
+  <hr />
+  <article id='known-for'>
+    <h3>Famous works:</h3>
+    <ul>
+      {{#each known_for}}
+        <li class='ticks'>{{this}}</li>
+      {{/each}}
+    </ul>
+  </article>
+  <br />
+  <hr />
+  <article id='education'>
+    <h3>Education:</h3>
+    {{#each education}}
+      <p>{{degree}}
+        in
+        {{field}}
+        at
+        {{institution}}
+        ({{year}})</p>
+    {{/each}}
+  </article>
+  <br />
+  <hr />
+  <article id='publications'>
+    <h3>Notable Publications:</h3>
+    {{#each notable_publications}}
+      <p><em>"{{title}}"</em>
+        published
+        {{year}}
+        by
+        {{publisher}}</p>
+    {{/each}}
+  </article>
+  <br />
+  <hr />
+  <article id='partners'>
+    <h3>Partners:</h3>
+    {{#each partners}}
+      <p>{{name}}. {{relationship}}, years: {{years}}</p>
+    {{/each}}
+  </article>
+  <br />
+  <hr />
+  <article id='awards'>
+    <h3>Awards:</h3>
+    {{#each awards}}
+      <p><em>{{title}}</em> ({{year}}). {{description}}.</p>
+    {{/each}}
+  </article>
+  <br />
+  <hr />
+  <article id='influences'>
+    <h3>Influences: </h3>
+    {{#each influences}}
+      <p>{{this}}</p>
+    {{/each}}
+  </article>
+  <br />
+  <hr />
+  <article id='influenced'>
+    <h3>Influenced: </h3>
+    {{#each influenced}}
+      <p>{{this}}</p>
+    {{/each}}
+  </article>
+  <br />
+  <hr />
+  <article id='quotes'>
+    <h3>Quotes: </h3>
+    {{#each quotes}}
+      <blockquote><q>{{this}}</q><blockquote>
+    {{/each}}
+  </article>
+  <br/>
+  <hr/>
+  <article id='discoveries'>
+    <h3>Major Discoveries: </h3>
+    {{#each major_discoveries}}
+      <em>{{title}}</em>
+      <p>Year of discovery: {{year}}.</p> 
+      <p>{{description}}</p>
+    {{/each}}
+  </article>
+  <br/>
+  <hr/>
+  <article id='contributions'>
+    <h3>Contributions: </h3>
+    {{#with contributions}}
+      <em>{{title}}</em>
+      <p>Year of discovery: {{year}}.</p>
+      <p>Field: {{field}}.</p> 
+      <p>{{description}}</p>
+    {{/with}}
+  </article>
+  <br/>
+  <hr/>
+
+</main>
