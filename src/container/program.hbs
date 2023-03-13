@@ -1,0 +1,101 @@
+{{! Це контейнер для сторінки Program }}
+
+<head>
+  <style type='text/css'>
+    #background-image{width: 100%; height: 100%; position:
+    fixed; left: 0px; top: 0px; z-index: -1; opacity: 0.3}
+    #wrapper{font-family: Verdana, sans-serif; display:
+    block; text-align: center; width: 60%; margin: 0 auto;}
+    h2, h3 {color:rgb(83, 5, 156);} .headphones {height:
+    20px; width: 20px;} ul li {list-style-type: none;}
+
+  </style>
+</head>
+<body>
+  <img
+    src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Louvre_Museum%2CParis%2CFrance.jpg/1280px-Louvre_Museum%2CParis%2CFrance.jpg'
+    alt='image of Eiffel Tower'
+    id='background-image'
+  />
+  <main id='wrapper'>
+    {{#with program.excursion}}
+      <h1>{{name}}</h1>
+      {{#with location}}
+        <h2>{{city}}, {{country}}</h2>
+      {{/with}}
+      <p><b>Date: {{date}}</b></p>
+      <h3>Tour Program:</h3>
+      {{#each program}}
+        <ul>
+          <li><strong><em>{{name}}</em></strong>
+            -
+            {{type}}. Duration:
+            {{duration}}
+            hours.
+            <br />
+            <br />
+            <details>
+              {{#with details.museum}}
+                <em>{{name}}</em>
+                <br />
+                {{#with location}}
+                  {{address}},
+                  {{city}},
+                  {{country}}
+                {{/with}}
+                <br />
+                <br />
+                <u>Exhibits:</u>
+                {{#each exhibits}}
+                  <ul>
+                    <li><em>{{name}}</em>
+                      {{#if artist}}
+                        by
+                        {{artist}}
+                      {{/if}}
+                      <br />
+                      <span>{{description}}</span>
+                      <br />
+                      {{#if audio_guide}}
+                        Included audio-guide
+                        <img
+                          class='headphones'
+                          src='data:image/jpeg;base64,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'
+                          alt='headphones'
+                        />
+                      {{/if}}
+                    </li>
+                  </ul>
+                {{/each}}
+              {{/with}}
+              {{#with details.venue}}
+                <em>{{name}}</em>
+                <br />
+                {{#with location}}
+                  {{address}},
+                  {{city}},
+                  {{country}}
+                {{/with}}
+              {{/with}}
+              <br />
+              <br />
+              {{#each details.performers}}
+                <em>{{name}}</em>
+                <br />
+                {{type}}
+                <br />
+                <br />
+              {{/each}}
+              {{#with details.guide}}
+                <p>You guide: {{name}}</p>
+                <p>Language: {{language}}</p>
+                <p>Rating: {{rating}}</p>
+
+              {{/with}}
+            </details>
+          </li>
+        </ul>
+      {{/each}}
+    {{/with}}
+  </main>
+</body>
