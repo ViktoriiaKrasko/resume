@@ -1,0 +1,186 @@
+{{! Це контейнер для сторінки MAC }}
+<head>
+  <style type='text/css'>
+    body{background: linear-gradient(to top, #9FA4C4 0%,
+    #B3CDD1 100%); font-family:'Tahoma', sans-serif;
+    display: block; width: 800px; text-align: center;
+    margin-left: 800px; font-size: 1.8em;} img{border: 10px
+    solid #89c2ca; border-radius: 10px;} h1{color: #034852;
+    text-shadow: 1px 1px 2px black;} h2{color: rgb(202, 20,
+    20)} ul *{list-style-type: none; padding: 0; margin: 0;
+    font-size: 0.8em;} .small-price{color: rgb(202, 20,
+    20);}
+  </style>
+</head>
+<body>
+  <main>
+    <img
+      src='https://www.apple.com/v/macbook-air/o/images/overview/trade_in__gh5aoaws28mm_large.jpg'
+      alt='MacBook'
+    />
+    <h1>{{name}}</h1>
+    <p><strong>{{description}}</strong></p>
+    <h2>Only <span class='price'>&#36;{{price}}</span></h2>
+    <br />
+    <p>Category:<br /> {{category}}</p>
+
+    <br />
+    <br />
+    {{#with features}}
+      <h3>Features: </h3>
+      {{#with processor}}
+        <p><strong>Processor: </strong>
+          <br />
+          Brand:
+          {{brand}}
+          <br />
+          Model:
+          {{model}},
+          <br />
+          Speed:
+          {{speed}},
+          <br />
+          Cores:
+          {{cores}}
+          <br />
+          Cache:
+          {{cache}}
+          RAM
+        </p>
+      {{/with}}
+
+      {{#with memory}}
+        <p><strong>Memory: </strong>
+          <br />
+          Type:
+          {{type}}
+          <br />
+          Size:
+          {{size}}
+          <br />
+          Speed:
+          {{speed}}
+        </p>
+      {{/with}}
+
+      {{#with storage}}
+        <p><strong>Storage: </strong>
+          <br />
+          Size:
+          {{size}}
+          <br />
+          Type:
+          {{type}}
+        </p>
+      {{/with}}
+
+      {{#with display}}
+        <p><strong>Display: </strong>
+          <br />
+          Size:
+          {{size}}
+          <br />
+          Resolution:
+          {{resolution}},
+          <br />
+          Technology:
+          {{technology}},
+          <br />
+          Color space:
+          {{color_space}}
+          <br />
+          Brightness:
+          {{brightness}}
+          <br />
+          Refresh rate:
+          {{refresh_rate}}
+        </p>
+      {{/with}}
+
+      {{#with graphics}}
+        <p><strong>Graphics: </strong>
+          <br />
+          Brand:
+          {{brand}}
+          <br />
+          Model:
+          {{model}}
+          <br />
+          Memory:
+          {{memory}}
+        </p>
+      {{/with}}
+
+      <p><strong>Ports: </strong>
+        {{#each ports}}
+          <br />
+          Type:
+          {{type}}
+          <br />
+          Count:
+          {{count}}
+          <br />
+
+          {{#each features}}
+            <ul>
+              <li>{{this}}</li>
+            </ul>
+          {{/each}}
+
+        {{/each}}
+      </p>
+
+      {{#with battery}}
+        <p><strong>Battery: </strong>
+          <br />
+          Type:
+          {{type}}
+          <br />
+          Capacity:
+          {{capacity}}
+          <br />
+          Life:
+          {{life}}
+        </p>
+      {{/with}}
+
+      <br />
+      <strong>Weight: </strong>
+      {{weight}}
+
+      <br />
+
+      {{#with dimensions}}
+        <p><strong>Dimensions: </strong>
+          <br />
+          Height:
+          {{height}}
+          <br />
+          Width:
+          {{width}}
+          <br />
+          Depth:
+          {{depth}}
+        </p>
+      {{/with}}
+
+      <br />
+      <strong>OS: </strong>
+      {{operating_system}}
+
+      <br />
+      <br />
+      <img
+        src='https://www.apple.com/v/macbook-air/o/images/overview/accessories__nthcgdyve6qi_large.jpg'
+        alt='Apple accessories'
+      />
+      <h3>Featured Mac Accessories</h3>
+      {{#each accessories}}
+        {{name}}
+        <br />
+        <span class='small-price'>&#36;{{price}}</span>
+        <br />
+      {{/each}}
+    {{/with}}
+  </main>
+</body>
