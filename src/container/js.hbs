@@ -1,0 +1,91 @@
+{{! Цей контейнер для сторінки JS }}
+<head>
+  <style type='text/css'>
+    body{background-color: rgb(20, 30, 40); color: #eee;
+    font-family: 'Verdana', sans-serif; font-size: 1.4em;
+    margin: 50px;} h1{color: lightblue;} h3{ color:
+    orangered;} code{text-align: center; white-space:
+    pre-line; word-break: normal; line-height: 2;
+    background-color: rgb(95, 43, 1); padding: 5px; margin:
+    0 auto; border-radius: 5px;}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>{{name}}</h1>
+    <p>{{description}}</p>
+
+    <br />
+    <hr />
+
+    {{#with history}}
+      <article>
+        <h3>History</h3>
+        <p>Founded in {{year}} by {{founder}}</p>
+      </article>
+    {{/with}}
+
+    <br />
+    <hr />
+
+    <h3>Datatypes: </h3>
+    {{#each types}}
+      <ul>
+        <li class='list-group-item'>{{this}}</li>
+      </ul>
+    {{/each}}
+
+    <h3>Syntax: </h3>
+    {{#with syntax}}
+      <ul>
+        <li>Variables: <code>{{variables}} </code></li>
+        <li>Functions: <code>{{functions}} </code></li>
+        <li>Conditionals:
+          <code>{{conditionals}} </code></li>
+        <li>Loops: <code>{{loops}} </code></li>
+        <li>Classess: <code>{{classes}} </code></li>
+      </ul>
+    {{/with}}
+
+    <br />
+    <hr />
+
+    <h3>Features: </h3>
+    {{#each features}}
+      <ul>
+        <li>{{this}}</li>
+      </ul>
+    {{/each}}
+
+    <br />
+    <hr />
+
+    <h3>Libraries: </h3>
+    {{#each libraries}}
+      <ul>
+        <li>{{this}}</li>
+      </ul>
+    {{/each}}
+
+    <br />
+    <hr />
+
+    <h3>Tools: </h3>
+    {{#each tools}}
+      <ul>
+        <li>{{this}}</li>
+      </ul>
+    {{/each}}
+
+    <br />
+    <hr />
+
+    <h3>Community: </h3>
+    {{#each community}}
+      <ul>
+        <li>{{name}} - {{type}}</li>
+      </ul>
+    {{/each}}
+
+  </main>
+</body>
