@@ -1,0 +1,80 @@
+{{! Це контейнер для нової сторінки Web }}
+
+<header>
+  <style type='text/css'>
+    main{ color: #4d4e53; background-color: #ffffff;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.5; display: block; text-align: center;
+    width: 80%; margin: 0 auto;} dt {color: #b68d05; margin:
+    15px; font-size: 2em; fotn-weight: 800px; } ul
+    li{list-style-type: none;} code{text-align: center;
+    white-space: pre-line; word-break: normal; line-height:
+    2; background-color: #f7f7f7; padding: 5px; margin: 0
+    auto; border-radius: 5px; font-size: 1.2em; width:
+    40px;}
+  </style>
+</header>
+<body>
+  <main>
+    <h1>Documentation</h1>
+    <dl>
+      {{#with web}}
+        {{#each languages}}
+          <dt>{{name}}</dt>
+          <p>Version: {{version}}</p>
+          <dd>{{description}}</dd>
+          <br />
+          {{#each elements}}
+            <article>
+              <p><strong>Tag
+                  <code>&lt;{{name}}&gt;</code></strong></p>
+              <dd>{{description}}</dd>
+              <br />
+              <em>Attributes: </em>
+              {{#each attributes}}
+                <ul>
+                  <li><code>{{name}}</code>
+                    -
+                    {{description}}</li>
+                </ul>
+              {{/each}}
+            </article>
+          {{/each}}
+          {{#each properties}}
+            <article>
+              <p><strong>Property
+                  <code>{{name}}</code></strong></p>
+              <dd>{{description}}</dd>
+              <br />
+              <em>Values: </em>
+              {{#each values}}
+                <ul>
+                  <li><code>{{value}}</code>
+                    -
+                    {{description}}</li>
+                </ul>
+              {{/each}}
+            </article>
+          {{/each}}
+          {{#each functions}}
+            <article>
+              <p><strong>Function
+                  <code>{{name}}</code></strong></p>
+              <dd>{{description}}</dd>
+              <br />
+              <em>Parameters: </em>
+              {{#each parameters}}
+                <ul>
+                  <li><code>{{name}} ({{type}})</code>
+                    -
+                    {{description}}</li>
+                </ul>
+              {{/each}}
+            </article>
+          {{/each}}
+        {{/each}}
+
+      {{/with}}
+    </dl>
+  </main>
+</body>
