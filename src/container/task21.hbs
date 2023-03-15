@@ -1,0 +1,168 @@
+{{! Це контейнер для сторінки Task21 }}
+
+<main style='margin: 20px; padding: 20px; width: 720px; '>
+    <div class="card">
+      <div class="card-body">         
+        {{#with heading}}
+          {{#with main}}
+            <h1 class='display-3'>{{title}}</h1>
+              <p class='text-muted'>{{text}}</p>
+        {{#with button_text}}
+          <button
+            class='btn btn-primary'
+            type='button'
+            formtarget='_blank'
+             >{{solid}}
+          </button>
+    
+        <br />
+        <br />
+
+          <button
+            class='btn btn-outline-primary'
+            type='button'
+            formtarget='_blank'
+            >{{outline}}
+          </button>
+        {{/with}}
+    {{/with}}
+    </div>
+    </div>
+    
+
+    <br />
+    
+
+    <div class="card">
+      <div class="card-body">   
+    {{#with second}}
+      <h2 class='display-5'>{{title}}</h2>
+      <p>{{text}}</p>
+      {{#with button_text}}
+        <button
+          class='btn btn-secondary'
+          type='button'
+          formtarget='_blank'
+        >{{solid}}</button>
+        <br />
+        <br />
+        <button
+          class='btn btn-outline-secondary'
+          type='button'
+          formtarget='_blank'
+        >{{outline}}</button>
+      {{/with}}
+    {{/with}}
+    </div>
+    </div>
+    <br />
+    <br />
+   
+    <div class="card">
+      <div class="card-body"> 
+    {{#with subblock}}
+      <h3 class='display-6'>{{title}}</h3>
+      <p class='text-muted'>{{text}}</p>
+      {{#with button_text}}
+        <button
+          class='btn btn-dark'
+          type='button'
+          formtarget='_blank'
+        >{{solid}}</button>
+        <br />
+        <br />
+        <button
+          class='btn btn-outline-dark'
+          type='button'
+          formtarget='_blank'
+        >{{outline}}</button>
+      {{/with}}
+    {{/with}}
+
+  {{/with}}
+  </div>
+</div>
+
+  <br />
+  <br />
+ 
+  <div class="card">
+      <div class="card-body"> 
+  {{#with nested_display}}
+    <div class='display-1'>{{title}}</div>
+    <div class="card">
+      <div class="card-body"> 
+    {{#with children_display}}
+      <div class='display-4'>{{title}}</div>
+      <p>{{text}}</p>
+      {{#with button}}
+        <button
+          class='btn btn-outline-warning'
+          type='button'
+          formtarget='_blank'
+        >{{text}}</button>
+      {{/with}}
+    {{/with}}
+   </div>
+</div>
+    <br />
+    <br />
+    <br />
+
+    
+    <h6>{{header_text}}</h6>
+    {{#with button}}
+      <button
+        class='btn btn-info'
+        type='button'
+        formtarget='_blank'
+      >{{text}}</button>
+    {{/with}}
+  {{/with}}
+  </div>
+</div>
+
+  <br />
+  <br />
+  <br />
+
+    <div class="card">
+      <div class="card-body"> 
+  {{#with paragraph}}
+    <p class='text-uppercase'>{{title}}</p>
+    <p class='text-lowercase'>{{text}}</p>
+    {{#with button}}
+      <a href="{{url}}"
+        class='text-info'
+        type='button'
+        formtarget='_blank'
+      >{{text}}</button>
+  {{/with}}
+  
+  <br />
+  <br />
+  <br />
+
+    
+    <div class="card">
+      <div class="card-body"> 
+    {{#each list_name}}
+    <ul>
+        <li>
+      <a
+      class="text-info"
+        href='{{url}}'
+        type='button'
+        formtarget='_blank'
+      >{{text}}</a>
+        </li>
+    </ul>
+    {{/each}}
+    </div>
+</div>
+    
+
+  {{/with}}
+  </div>
+</div>
+</main>
