@@ -1,36 +1,28 @@
 {{! Це контейнер для сторінки про проекти }}
 
-<div>
+<div> 
     {{#with main}}
-  <main>
+  <main class="p-3">
     <section>
       {{> title data="Work History" big=true}}
-      <div>
-        <ul>
+      <div class="pt-3">
+        <ol>
         {{#each work}}
-            <li>
+            <li class="p-2">
                 <div>{{position}} </div>
-                <br/>
                 <div>{{duration.from}} - {{#if duration.to}} {{duration.to}} {{else}} (till now) {{/if}}</div>
-                <br/>
                 <div>{{#if company.url}}{{> link text=company.name href=company.url blank=true noLine=true}}{{else}}{{company.name}}{{/if}}</div>
-                <br/>
-                <br/>
-                <div><strong>Projects ({{projectAmount}}): </strong></div>
-                <br/>
+                <div class="my-2"><strong>Projects ({{projectAmount}}): </strong></div>
                 <ul>
                     {{#each projects}}
                     <li>
                         <div>{{> link text=name href=url blank=true noLine=true}}</div>
-                        <br/>
-                        <div><p><em>{{about}}</em></p></div>
-                        <br/>
-                        <div><b>Technologies used ({{stackAmount}}):</b>
-                         {{#each stacks}} 
-                            <ul><li>{{name}}</li></ul>{{/each}}</div>
-                        <br/>
-                        <div><b>Awards recieved ({{awardAmount}}):</b>
-                         {{#each awards}} 
+                        <div><p class="p-2"><em>{{about}}</em></p></div>
+                          <div><b>Technologies used ({{stackAmount}}):</b>
+                            {{#each stacks}} 
+                              <ul><li>{{name}}</li></ul>{{/each}}</div>
+                          <div><b>Awards recieved ({{awardAmount}}):</b>
+                            {{#each awards}} 
                             <ul><li>{{name}}</li></ul>{{/each}}</div>
                         <br/>
                     </li>

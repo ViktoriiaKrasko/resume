@@ -12,11 +12,11 @@ var header = {
   },
   position: 'Junior Fullstack JS Developer',
   salary: '1000$ в місяць',
-  address: 'Kyiv, Shevchenka Boulevard 24',
+  address: 'Kyiv, Ivasiuka 27A',
 }
 
 var footer = {
-  address: 'Kyiv, Shevchenka Boulevard 24',
+  address: 'Kyiv, Ivasiuka 27A',
   social: {
     email: {
       text: 'akiv.co@gmail.com',
@@ -65,18 +65,18 @@ router.get('/summary', function (req, res) {
       summary: {
         title: 'Summary',
         text: `Hard-working and proactive junior developer
-         with 6 months experience in delivering enjoable web
+         with 6 months experience in delivering enjoyable web
           and mobile products for the IT Brains company.
-           Created and launched 4 web project and 3 mobile apps
-            using React, Angular and PostgreSQL. 
-            Also skilled with ExpressJS, MongoDB, jQuery.`,
+           Created and launched 3 web project and 2 mobile apps
+            using React, Angular and MongoDB. 
+            Also skilled with ExpressJS, Handlebars, JQuery.`,
       },
 
       experience: {
         title: 'Experience',
         text: `Addressed and fixed complex bugs, 
         implemented and updated application under the direction
-         of Senior Software Developes, worked at an independent level,
+         of Senior Software Developers, worked at an independent level,
           while also serving as an effective and enthusiastic collaborator. 
           Performed automated testing tasks and developed complex features routinely.`,
       },
@@ -110,7 +110,8 @@ router.get('/skills', function (req, res) {
         },
         {
           name: 'Handlebars',
-          point: 5,
+          point: 9,
+          isTop: true,
         },
         {
           name: 'CSS',
@@ -119,23 +120,23 @@ router.get('/skills', function (req, res) {
         },
         {
           name: 'JavaScript',
-          point: 2,
+          point: 7,
         },
         {
           name: 'React',
-          point: 1,
+          point: 8,
         },
         {
           name: 'Node',
-          point: 3,
+          point: 4,
         },
         {
           name: 'ExpressJS',
-          point: 3,
+          point: 4,
         },
         {
           name: 'MongoDB',
-          point: 0,
+          point: 5,
         },
         {
           name: 'VS Code',
@@ -148,7 +149,7 @@ router.get('/skills', function (req, res) {
           isTop: true,
         },
         {
-          name: 'Terminal',
+          name: 'JQuery',
           point: 5,
         },
         {
@@ -261,31 +262,31 @@ router.get('/work', function (req, res) {
             url: 'https://it-brains.com.ua',
           },
           duration: {
-            from: '01.01.2002',
-            to: '01.01.2006',
+            from: '19.12.2022',
+            to: '01.07.2023',
           },
           projectAmount: 3,
           projects: [
             {
               name: 'Resume',
-              url: 'https://resume.com.ua/',
+              url: 'https://github.com/ViktoriiaKrasko/resume',
               about:
-                'Created resume with Handlebars and 0 knowledge in JS and CSS',
+                'Created resume with Handlebars and Boorstrap',
               stacks: [
                 {
-                  name: 'React.js',
-                },
-                {
-                  name: 'Node.js',
-                },
-                {
                   name: 'HTML',
+                },
+                {
+                  name: 'Handlebars',
+                },
+                {
+                  name: 'Bootstrap',
                 },
               ],
               stackAmount: 3,
               awards: [
                 {
-                  name: 'No awards whatsoever',
+                  name: 'Praised by',
                 },
                 {
                   name: 'Still no awards',
@@ -323,17 +324,16 @@ router.get('/work', function (req, res) {
             {
               name: 'Cafe landing page',
               url: 'https://coffeeshop.com.ua/',
-              about:
-                'Created landing page with JS and React.js',
+              about: 'Created landing page with JS and Pug',
               stacks: [
                 {
                   name: 'React.js',
                 },
                 {
-                  name: 'Node.js',
+                  name: 'Pug',
                 },
                 {
-                  name: 'JS',
+                  name: 'CSS',
                 },
               ],
               stackAmount: 3,
@@ -376,6 +376,17 @@ router.get('/work', function (req, res) {
     },
 
     footer,
+  })
+})
+
+// ================================================================
+
+router.get('/main', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('main', {
+    // ↙ сюди вводимо JSON дані
+
+    layout: 'main',
   })
 })
 
