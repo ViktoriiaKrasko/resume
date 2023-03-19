@@ -12,6 +12,9 @@
 </head>
 <body>
   <main>
+    <button style='float: right; font-size: 2rem;'>
+      <a href='/main'>Main</a></button>
+
     <h1>{{name}}</h1>
     <p>{{description}}</p>
 
@@ -31,7 +34,7 @@
     <h3>Datatypes: </h3>
     {{#each types}}
       <ul>
-        <li class='list-group-item'>{{this}}</li>
+        <li>{{this}}</li>
       </ul>
     {{/each}}
 

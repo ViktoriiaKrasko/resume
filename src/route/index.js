@@ -12,11 +12,11 @@ var header = {
   },
   position: 'Junior Fullstack JS Developer',
   salary: '1000$ в місяць',
-  address: 'Kyiv, Shevchenka Boulevard 24',
+  address: 'Kyiv, Ivasiuka 27A',
 }
 
 var footer = {
-  address: 'Kyiv, Shevchenka Boulevard 24',
+  address: 'Kyiv, Ivasiuka 27A',
   social: {
     email: {
       text: 'akiv.co@gmail.com',
@@ -65,18 +65,18 @@ router.get('/summary', function (req, res) {
       summary: {
         title: 'Summary',
         text: `Hard-working and proactive junior developer
-         with 6 months experience in delivering enjoable web
+         with 6 months experience in delivering enjoyable web
           and mobile products for the IT Brains company.
-           Created and launched 4 web project and 3 mobile apps
-            using React, Angular and PostgreSQL. 
-            Also skilled with ExpressJS, MongoDB, jQuery.`,
+           Created and launched 3 web project and 2 mobile apps
+            using React, Angular and MongoDB. 
+            Also skilled with ExpressJS, Handlebars, JQuery.`,
       },
 
       experience: {
         title: 'Experience',
         text: `Addressed and fixed complex bugs, 
         implemented and updated application under the direction
-         of Senior Software Developes, worked at an independent level,
+         of Senior Software Developers, worked at an independent level,
           while also serving as an effective and enthusiastic collaborator. 
           Performed automated testing tasks and developed complex features routinely.`,
       },
@@ -110,7 +110,8 @@ router.get('/skills', function (req, res) {
         },
         {
           name: 'Handlebars',
-          point: 5,
+          point: 9,
+          isTop: true,
         },
         {
           name: 'CSS',
@@ -119,23 +120,23 @@ router.get('/skills', function (req, res) {
         },
         {
           name: 'JavaScript',
-          point: 2,
+          point: 7,
         },
         {
           name: 'React',
-          point: 1,
+          point: 8,
         },
         {
           name: 'Node',
-          point: 3,
+          point: 4,
         },
         {
           name: 'ExpressJS',
-          point: 3,
+          point: 4,
         },
         {
           name: 'MongoDB',
-          point: 0,
+          point: 5,
         },
         {
           name: 'VS Code',
@@ -148,7 +149,7 @@ router.get('/skills', function (req, res) {
           isTop: true,
         },
         {
-          name: 'Terminal',
+          name: 'JQuery',
           point: 5,
         },
         {
@@ -261,31 +262,31 @@ router.get('/work', function (req, res) {
             url: 'https://it-brains.com.ua',
           },
           duration: {
-            from: '01.01.2002',
-            to: '01.01.2006',
+            from: '19.12.2022',
+            to: '01.07.2023',
           },
           projectAmount: 3,
           projects: [
             {
               name: 'Resume',
-              url: 'https://resume.com.ua/',
+              url: 'https://github.com/ViktoriiaKrasko/resume',
               about:
-                'Created resume with Handlebars and 0 knowledge in JS and CSS',
+                'Created resume with Handlebars and Boorstrap',
               stacks: [
                 {
-                  name: 'React.js',
-                },
-                {
-                  name: 'Node.js',
-                },
-                {
                   name: 'HTML',
+                },
+                {
+                  name: 'Handlebars',
+                },
+                {
+                  name: 'Bootstrap',
                 },
               ],
               stackAmount: 3,
               awards: [
                 {
-                  name: 'No awards whatsoever',
+                  name: 'Praised by',
                 },
                 {
                   name: 'Still no awards',
@@ -323,17 +324,16 @@ router.get('/work', function (req, res) {
             {
               name: 'Cafe landing page',
               url: 'https://coffeeshop.com.ua/',
-              about:
-                'Created landing page with JS and React.js',
+              about: 'Created landing page with JS and Pug',
               stacks: [
                 {
                   name: 'React.js',
                 },
                 {
-                  name: 'Node.js',
+                  name: 'Pug',
                 },
                 {
-                  name: 'JS',
+                  name: 'CSS',
                 },
               ],
               stackAmount: 3,
@@ -376,6 +376,17 @@ router.get('/work', function (req, res) {
     },
 
     footer,
+  })
+})
+
+// ================================================================
+
+router.get('/main', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('main', {
+    // ↙ сюди вводимо JSON дані
+
+    layout: 'main',
   })
 })
 
@@ -1677,6 +1688,298 @@ router.get('/task31', function (req, res) {
         },
       ],
     },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+router.get('/shophome', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shophome', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+      ],
+      Logo: 'Logo',
+    },
+
+    newsBlock: {
+      title: 'Latest News',
+      cards: [
+        {
+          title: 'COVID-19 Vaccinations Begin in Europe',
+          description:
+            'As the world continues to grapple with the ongoing COVID-19 pandemic, Europe begins its vaccination rollout, with healthcare workers and the elderly among the first to receive the vaccine.',
+          isTop: false,
+          idNew: false,
+        },
+        {
+          title: 'Tesla Stock Surges After Record Sales',
+          description:
+            "Tesla's stock price jumps 10% following the company's announcement of record sales in the last quarter, thanks in part to strong demand for its electric vehicles.",
+          isTop: true,
+          idNew: true,
+        },
+        {
+          title:
+            'New Study Shows Benefits of Meditation for Mental Health',
+          description:
+            'A new study published in the Journal of the American Medical Association finds that practicing mindfulness meditation can lead to improved mental health outcomes for people struggling with depression and anxiety.',
+          isTop: false,
+          idNew: false,
+        },
+        {
+          title: 'NASA Launches New Mars Rover',
+          description:
+            "NASA's Perseverance rover successfully launches on a mission to explore Mars, with the goal of collecting samples of the planet's surface and searching for signs of ancient microbial life.",
+          isTop: false,
+          idNew: true,
+        },
+        {
+          title:
+            'GameStop Shares Soar as Reddit Traders Rally',
+          description:
+            'Shares of GameStop surge as amateur traders on the social media platform Reddit rally to drive up the price, in what some are calling a battle between Wall Street and Main Street.',
+          isTop: false,
+          idNew: false,
+        },
+        {
+          title:
+            'UK Announces Plan to Ban Sale of Gas-Powered Cars by 2030',
+          description:
+            'In an effort to combat climate change, the UK government announces a plan to ban the sale of new gas-powered cars and vans by 2030, with hybrid vehicles to follow in 2035.',
+          isTop: true,
+          idNew: false,
+        },
+        {
+          title:
+            'New Study Shows Link Between Exercise and Longevity',
+          description:
+            'A new study published in the Journal of the American Medical Association suggests that regular exercise can help people live longer, with participants who exercised regularly having a lower risk of premature death.',
+          isTop: false,
+          idNew: false,
+        },
+        {
+          title: 'Amazon Expands Grocery Delivery Service',
+          description:
+            'Amazon announces an expansion of its grocery delivery service, with plans to offer free delivery to Prime members on orders over $35 and to expand its selection of fresh and organic produce.',
+          isTop: false,
+          idNew: true,
+        },
+      ],
+    },
+
+    goodsBlock: {
+      tabs: [
+        {
+          isActive: true,
+          isDisabled: false,
+          text: 'Electronics',
+        },
+        {
+          isActive: false,
+          isDisabled: false,
+          text: 'Home & Kitchen',
+        },
+        {
+          isActive: false,
+          isDisabled: false,
+          text: 'Clothing & Accessories',
+        },
+        {
+          isActive: false,
+          isDisabled: true,
+          text: 'Toys & Games',
+        },
+      ],
+      cards: [
+        {
+          image: 'https://www.google.com/',
+          title: 'iPhone 13',
+          description:
+            'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
+          isHot: false,
+          idNew: false,
+        },
+        {
+          image: 'https://www.google.com/',
+          title: 'MacBook Pro',
+          description:
+            "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
+          isHot: true,
+          idNew: false,
+        },
+        {
+          image: 'https://www.google.com/',
+          title: 'AirPods Pro',
+          description:
+            "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
+          isHot: false,
+          idNew: false,
+        },
+        {
+          image: 'https://www.google.com/',
+          title: 'Sony Bravia XR A90J',
+          description:
+            'This OLED TV boasts a 4K resolution, HDR support, and a high refresh rate for smooth motion handling.',
+          isHot: false,
+          idNew: true,
+        },
+        {
+          image: 'https://www.google.com/',
+          title: 'Nintendo Switch OLED Model',
+          description:
+            'The latest iteration of the popular gaming console features a larger OLED screen and improved audio quality.',
+          isHot: false,
+          idNew: false,
+        },
+        {
+          image: 'https://www.google.com/',
+          title: 'Bose SoundLink Revolve+',
+          description:
+            'This portable Bluetooth speaker features 360-degree sound, water-resistant construction, and up to 16 hours of battery life.',
+          isHot: true,
+          idNew: true,
+        },
+      ],
+    },
+    subscribe: {
+      header: 'Unlock Premium Content',
+      description:
+        'Subscribe to access exclusive content and features.',
+      buttons: [
+        {
+          text: 'Register Now',
+          link: 'https://www.youtube.com/',
+          type: 'registration',
+        },
+        {
+          text: 'Buy Subscription',
+          link: 'https://www.youtube.com/',
+          type: 'subscription',
+        },
+      ],
+    },
+    service: {
+      title: 'Our Services',
+      description:
+        'We offer a variety of services to meet your needs, including web design, content creation, and social media management.',
+      buttons: [
+        {
+          text: 'Show More',
+          link: 'https://www.youtube.com/',
+          type: 'show-more',
+        },
+      ],
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
   })
   //                  ↑↑ сюди вводимо JSON дані
 })

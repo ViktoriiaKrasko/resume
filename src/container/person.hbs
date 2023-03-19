@@ -1,8 +1,10 @@
 {{! Це контейнер для нової сторінки Person }}
 
-<div>
+<div id="person">
   {{#with person}}
   <main>
+    <button style='float: right; font-size: 2rem;'>
+      <a href='/main'>Main</a></button>
     <section>
       {{> title data=name big=true}}
       <br/>
