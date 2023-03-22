@@ -1,0 +1,25 @@
+{{#with navigation}}
+  <div class='card m-3' style='overflow:hidden;'>
+    <div class='row'>
+      <div class='col-9'>
+        <h1 class='ps-4 pb-2'>{{Logo}}</h1>
+      </div>
+      <div class='col-3 text-end pt-2'>
+        <ul class='nav text-inline'>
+          {{#each links}}
+            {{#if href}}
+              <li class='nav-item px-3'><a
+                  class='nav-link'
+                  href='{{href}}'
+                >{{text}}</a></li>
+            {{else}}
+              <li class='nav-item px-3'><a
+                  class='nav-link disabled'
+                >{{text}}</a></li>
+            {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+{{/with}}

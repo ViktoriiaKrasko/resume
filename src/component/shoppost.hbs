@@ -1,0 +1,30 @@
+<div class='row'>
+  {{#each cards}}
+    <div class='col-3 mb-2 p-1'>
+      <div class='card-deck'>
+        <div class='card text-bg-dark h-100'>
+
+          <div class='card-header border-light'>
+
+            {{title}}
+            {{#if isTop}}
+              <div
+                class='badge rounded-pill text-bg-success'
+              >New</div>
+            {{/if}}
+            {{#if idNew}}
+              <div
+                class='badge rounded-pill text-bg-danger'
+              >Top</div>
+            {{/if}}
+
+          </div>
+
+          <div class='card-body'>
+            {{description}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

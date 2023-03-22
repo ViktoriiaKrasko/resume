@@ -1,0 +1,48 @@
+{{! Це контейнер для сторінки Shopnews }}
+
+<main>
+    {{> breadcrumb}}
+
+    {{#with newsData}}
+        <div class="row">
+                <img class="card-img-top" src="{{photo}}" alt="image top">            
+                </img>
+                    {{#with head}}
+                        <div class="display-5 my-4">
+                            {{heading}}
+                        </div>
+                        <p>{{description}}</p>
+                    {{/with}}
+
+                    {{#each body}}
+                        <div class="col-2">
+                          <div class="card" style="height:100%; width:100%;">
+                            <div class="card-header">
+                                 {{title}}
+                            </div>
+                            <ul class='list-group list-group-flush py-2'>
+                                <li class="list-group-item">{{text}}</li>
+                            </ul>
+                           </div>
+                         </div>
+                    {{/each}}
+        </div>
+    {{/with}}
+
+<br class="my-5">
+<hr class="my-5">
+
+
+{{#with newsOtherBlock}}
+    <h2 class='text-center pb-2'>
+      {{title}}
+    </h2>
+   {{> shoppost}}
+{{/with}}
+
+<hr class="my-5">
+
+{{> shopaction}}
+
+<hr class="my-5">
+</main>
