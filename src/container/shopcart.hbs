@@ -1,0 +1,73 @@
+{{! Це контейнер для сторінки Shopcart }}
+
+<main class='m-3'>
+    <div class="row">
+        <div class="col-2">
+            {{#with header}}
+                <h1 class='py-2'>{{title}}</h1>
+        </div>
+        <div class="col-7"></div>
+        <div class="col-3 text-end mt-3">
+            {{#with button}}
+                <button
+                class='btn btn-outline-secondary'
+                href='{{link}}'
+                >{{text}}</button>
+            {{/with}}
+            {{/with}}
+        </div>
+    </div>
+
+    <hr clas="my-5">
+
+    {{> cartGoodsItem}}
+
+    <hr class="my-5">
+
+    {{#with total}}
+        <div class="row">
+            <div class="col-8 ps-2">
+                <h3>{{title}}</h3>
+                <div class="display-4 py-2"><strong>{{amount}}</strong></div>
+                <p>{{delivery}}</p>
+            </div>
+            <div class="col-4">
+                {{#each buttons}}
+                    {{#if isSuccess}}
+                    <button href="{{link}}" class="btn btn-success my-3">{{text}}</button>
+                        {{else}}
+                        {{#if isOutline}}
+                        <button href="{{link}}" class="btn btn-outline-success">{{text}}</button>
+                        {{/if}}
+                    {{/if}}
+                    <br/>   
+                {{/each}}
+            </div>
+        </div>
+    {{/with}}
+
+    <hr class="my-5">
+
+    
+    {{> shopcard}}
+
+    <hr class="my-5">
+
+
+    {{#with subscribe}}
+    <div class="card bg-dark text-light">
+        <div class="row">            
+                <div class="col-6 pt-4 ps-5">
+                    <h2>{{header}}</h2>
+                    <p>{{description}}</p>
+                </div>
+                <div class="col-6 text-end pt-4 px-5">
+                    {{#each buttons}}
+                        <button class="btn btn-primary m-2" href="{{link}}">{{text}}</button>
+                    {{/each}}
+                </div>  
+            </div>
+        </div>
+    {{/with}}
+
+</main>
