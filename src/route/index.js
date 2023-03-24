@@ -35,14 +35,16 @@ var footer = {
 
 // ================================================================
 
-// router.get Створює нам один ентпоїнт
+// router.get Створює нам один ендпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'main',
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -53,7 +55,7 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
-
+    layout: 'default',
     page: {
       title: 'CV * Summary',
       big: true,
@@ -244,7 +246,7 @@ router.get('/work', function (req, res) {
   res.render('work', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'big',
+    layout: 'default',
 
     page: {
       title: 'CV * Projects',
@@ -381,23 +383,12 @@ router.get('/work', function (req, res) {
 
 // ================================================================
 
-router.get('/main', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
-  res.render('main', {
-    // ↙ сюди вводимо JSON дані
-
-    layout: 'main',
-  })
-})
-
-// ================================================================
-
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'person',
+    layout: 'main',
 
     page: {
       title: 'CV * Person',
@@ -510,7 +501,7 @@ router.get('/bio', function (req, res) {
   res.render('bio', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'bio',
+    layout: 'main',
 
     page: {
       title: 'CV * Bio',
@@ -615,7 +606,7 @@ router.get('/program', function (req, res) {
   res.render('program', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'program',
+    layout: 'main',
 
     page: {
       title: 'Program',
@@ -708,7 +699,7 @@ router.get('/web', function (req, res) {
   res.render('web', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'web',
+    layout: 'main',
 
     page: {
       title: 'Web',
@@ -846,7 +837,7 @@ router.get('/js', function (req, res) {
   res.render('js', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'js',
+    layout: 'main',
 
     page: {
       title: 'JS',
@@ -932,7 +923,7 @@ router.get('/car', function (req, res) {
   res.render('car', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'car',
+    layout: 'main',
 
     page: {
       title: 'Car',
@@ -1038,7 +1029,7 @@ router.get('/mac', function (req, res) {
   res.render('mac', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'mac',
+    layout: 'main',
 
     page: {
       title: 'Mac',
@@ -1133,7 +1124,7 @@ router.get('/facebook', function (req, res) {
   res.render('facebook', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'facebook',
+    layout: 'main',
 
     page: {
       title: 'Facebook',
@@ -1298,7 +1289,7 @@ router.get('/task21', function (req, res) {
   res.render('task21', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'task21',
+    layout: 'main',
 
     page: {
       title: 'Task21',
@@ -1374,7 +1365,7 @@ router.get('/task22', function (req, res) {
   res.render('task22', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'task22',
+    layout: 'main',
 
     page: {
       title: 'Task22',
@@ -1440,7 +1431,7 @@ router.get('/task31', function (req, res) {
   res.render('task31', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'task31',
+    layout: 'main',
 
     page: {
       title: 'Task31',
@@ -3988,10 +3979,6 @@ router.get('/shopcatalog', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-
-// ================================================================
-
-// ================================================================
 
 // Підключаємо роутер до бек-енду
 module.exports = router

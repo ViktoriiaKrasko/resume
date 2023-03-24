@@ -2,13 +2,141 @@
 Це код container файлу для index сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  }}
+<main>
+  {{> index-header}}
 
-<div class='p-5 m-5'>
-  <h1 class="py-3">Resume</h1>
+  <div class="col-12">
 
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 text-center">
+          <div class="card shadow">
+          <section class="my-2">
+            <div class='display-4 font-monospace my-4'>Resume</div>
+            <button class='btn btn-primary me-2'><a
+                class='text-light'
+                href='/summary'
+              >Summary</a></button>
+            <button class='btn btn-primary me-2'><a
+                class='text-light'
+                href='/skills'
+              >Skills</a></button>
+            <button class='btn btn-primary me-2'><a
+                class='text-light'
+                href='/education'
+              >Education</a></button>
+            <button class='btn btn-primary'><a
+                class='text-light'
+                href='/work'
+              >Work</a></button>
 
+          </section>
+        </div>
 
+        <div class="card my-5 shadow">
+          <section class="my-2">
+            <div class='display-4 font-monospace my-4'>Shop</div>
 
+            <button class='btn btn-secondary me-2 my-2'><a
+                class='text-light'
+                href='/shophome'
+              >Home</a></button>
+              <button class='btn btn-secondary me-2'><a
+                class='text-light'
+                href='/shopprofile'
+              >Profile</a></button>
+              <button class='btn btn-secondary me-2'><a
+                class='text-light'
+                href='/shopcatalog'
+              >Catalogue</a></button>
+              <br/>
+              <button class='btn btn-secondary me-2'><a
+                class='text-light'
+                href='/shopproduct'
+              >Product Page</a></button>
+              <button class='btn btn-secondary me-2'><a
+                class='text-light'
+                href='/shopreview'
+              >Shop Review</a></button>
+              <button class='btn btn-secondary me-2'><a
+                class='text-light'
+                href='/shopnews'
+              >Shop News</a></button>
+              <button class='btn btn-secondary me-2'><a
+                class='text-light'
+                href='/shopcart'
+              >Cart</a></button>
+              <button class='btn btn-secondary me-2'><a
+                class='text-light'
+                href='/shoporder'
+              >Order Page</a></button>
+
+          </section>
+        </div>
+
+        
+
+        <div class="card my-5 shadow">
+          <section class="my-2">
+            <div class='display-4 font-monospace my-4'>Documentation</div>
+
+            <button class='btn btn-info me-2'><a
+                class='text-light'
+                href='/web'
+              >Web</a></button>
+              <button class='btn btn-info me-2'><a
+                class='text-light'
+                href='/js'
+              >JavaScript</a></button>
+
+          </section>
+        </div>
+
+        <div class="card my-5 shadow">
+          <section class="my-2">
+            <div class='display-4 font-monospace my-4'>Tribute pages</div>
+            <button class='btn btn-secondary me-2'><a
+                class='text-light'
+                href='/person'
+              >Person</a></button>
+            <button class='btn btn-secondary me-2'><a
+                class='text-light'
+                href='/bio'
+              >Bio</a></button>
+
+          </section>
+        </div>
+
+        <div class="card my-5 shadow">
+          <section class="my-2">
+            <div class='display-4 font-monospace my-4'>Random pages</div>
+
+            <button class='btn btn-primary me-2'><a
+                class='text-light'
+                href='/car'
+              >Car</a></button>
+              <button class='btn btn-primary me-2'><a
+                class='text-light'
+                href='/program'
+              >Tour Program</a></button>
+              <button class='btn btn-primary me-2'><a
+                class='text-light'
+                href='/mac'
+              >MacBook</a></button>
+              <button class='btn btn-primary me-2'><a
+                class='text-light'
+                href='/task31'
+              >WebPageInterface</a></button>
+
+          </section>
+        </div>
+
+        </div>
+      </div>
+
+  </div>
+  
+</main>
 {{! 
     Цей код містить лише те, що буде виводитись в <body>
     Адже наш layout/default.hbs має вже структуру HTML
