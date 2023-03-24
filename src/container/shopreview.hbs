@@ -1,0 +1,126 @@
+{{! Це контейнер до сторінки Shopreview }}
+
+<main class='px-3'>
+  {{#with formBlock}}
+    <div class='row'>
+      <div class='col-8 my-5'>
+        <h1>{{header}}</h1>
+        <p>{{rating.title}}: {{rating.value}}</p>
+
+        {{#with actionBlock}}
+          <nav class='nav nav-tabs mb-5'>
+            {{#each tabs}}
+              {{#if isActive}}
+                <a
+                  href='#'
+                  class='nav-link active'
+                >{{text}}</a>
+              {{else}}
+                <a href='#' class='nav-link'>{{text}}</a>
+              {{/if}}
+            {{/each}}
+          </nav>
+
+          <hr class='my-5' style='border-width:2px;' />
+
+          {{#with field}}
+            <form class='input-group'>
+              <input
+                class='form-control form-control-lg'
+                placeholder='{{placeholder}}'
+              />
+              <div class='input-group-append'>
+                <button
+                  class='btn btn-secondary btn-lg'
+                  href='{{button.link}}'
+                >{{button.text}}</button>
+              </div>
+            </form>
+          {{/with}}
+        {{/with}}
+
+        <hr class='my-5' style='border-width:2px;' />
+
+        {{#with feedbackBlock}}
+          <h2 class='my-5'>{{title}}</h2>
+          {{#each buttons}}
+            {{#if isWarning}}
+              <button
+                class='btn btn-warning text-light me-3'
+                style='width: 180px;'
+                href='{{link}}'
+              >{{text}}</button>
+            {{else}}
+              {{#if isSuccess}}
+                <button
+                  class='btn btn-success me-3'
+                  style='width: 180px;'
+                  href='{{link}}'
+                >{{text}}</button>
+              {{else}}
+                {{#if isDanger}}
+                  <button
+                    class='btn btn-danger'
+                    style='width: 180px;'
+                    href='{{link}}'
+                  >{{text}}</button>
+                {{/if}}
+              {{/if}}
+            {{/if}}
+          {{/each}}
+        {{/with}}
+      </div>
+
+      {{#with goodsInfo}}
+        <div class='col-4 my-5'>
+          <div class='card'>
+            <div class='card-body'>
+              <img
+                src='{{photo}}'
+                class='m-2'
+                style='width:150px;height:150px'
+              />
+              <p class='m-2'>{{name}}</p>
+            </div>
+          </div>
+          <div class='card my-3'>
+            <div class='card-body'>
+              <h4>{{price}}</h4>
+              <p>Є в наявності</p>
+              {{#each buttons}}
+                <div class='my-2'>
+                  {{#if isPrimary}}
+                    <button
+                      class='btn btn-primary'
+                      href='{{link}}'
+                    >{{text}}</button>
+                  {{else}}
+                    {{#if isSecondary}}
+                      <button
+                        class='btn btn-secondary'
+                        href='{{link}}'
+                      >{{text}}</button>
+                    {{/if}}
+                  {{/if}}
+                </div>
+              {{/each}}
+            </div>
+          </div>
+          <div class='card'>
+            <div class='card-body'>
+              <div>{{seller.title}}:
+                <strong>{{seller.value}}</strong></div>
+            </div>
+          </div>
+        </div>
+      {{/with}}
+    </div>
+  {{/with}}
+
+  <hr class='my-5' style='border-width:2px;' />
+
+  {{> reviewItem}}
+
+  {{> shopaction}}
+
+</main>
